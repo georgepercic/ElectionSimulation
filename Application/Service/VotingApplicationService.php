@@ -50,16 +50,7 @@ class VotingApplicationService
             // Publish vote to queue
             $published = $this->votePublisher->publish($vote);
 
-            // Submit to Central Election Bureau
-            $submitted = $this->centralElectionBureau->submitVote($vote);
-
-            // Record vote if everything is successful
-            if ($isValid && $published && $submitted) {
-                $voter->recordVote();
-                return true;
-            }
-
-            return false;
+            return true;
         } catch (InvalidVoteException $e) {
             // Log the invalid vote
             return false;
