@@ -10,9 +10,9 @@ abstract class Id
 {
     private string $id;
 
-    public function __construct(?string $id = null)
+    public function __construct(string $id)
     {
-        $this->id = $id ?? Uuid::v4()->toRfc4122();
+        $this->id = $id;
     }
 
     public function toString(): string
@@ -23,10 +23,5 @@ abstract class Id
     public function __toString(): string
     {
         return $this->id;
-    }
-
-    public function equals(self $other): bool
-    {
-        return $this->id === $other->id;
     }
 }
