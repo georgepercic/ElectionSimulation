@@ -64,7 +64,6 @@ class VoteValidationService
     private function validateBallotMarking(Vote $vote): void
     {
         // Additional ballot validation logic could be added here
-        // For example, checking for multiple markings, proper sealing, etc.
     }
 
     private function validateCandidateEligibility(Candidate $candidate): void
